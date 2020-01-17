@@ -1,6 +1,7 @@
 /*! 
- * jQuery Steps v1.1.0 - 09/04/2014
+ * jQuery Steps v1.1.0-goto - 2020-01-17
  * Copyright (c) 2014 Rafael Staib (http://www.jquery-steps.com)
+ * Modifications 2020 René Uittenbogaard
  * Licensed under MIT http://www.opensource.org/licenses/MIT
  */
 ;(function ($, undefined)
@@ -1436,6 +1437,18 @@ $.fn.steps.next = function ()
 $.fn.steps.previous = function ()
 {
     return goToPreviousStep(this, getOptions(this), getState(this));
+};
+
+/**
+ * Routes to a specific step.
+ *
+ * @method goto
+ * @param index {Number} The position (zero-based) of the step to activate
+ * @return {Boolean} Indicates whether the action executed
+ **/
+$.fn.steps.goto = function (index)
+{
+    return goToStep(this, getOptions(this), getState(this), index);
 };
 
 /**

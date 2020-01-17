@@ -135,6 +135,18 @@ $.fn.steps.previous = function ()
 };
 
 /**
+ * Routes to a specific step.
+ *
+ * @method goto
+ * @param index {Number} The position (zero-based) of the step to activate
+ * @return {Boolean} Indicates whether the action executed
+ **/
+$.fn.steps.goto = function (index)
+{
+    return goToStep(this, getOptions(this), getState(this), index);
+};
+
+/**
  * Removes a specific step by an given index.
  *
  * @method remove
